@@ -29,10 +29,35 @@ let isAutoPlaying = false;
      else{
       clearInterval(intervalId);
       isAutoPlaying= false;
-     }
-  
-  }
+     }}
 
+document.querySelector('.js-rock-button')
+.addEventListener('click', () => {
+  playGame('Rock');
+});
+
+document.querySelector('.js-paper-button')
+.addEventListener('click', () => {
+  playGame('Paper');
+});
+
+document.querySelector('.js-scissor-button')
+.addEventListener('click', () => {
+  playGame('Scissor');
+});
+
+document.addEventListener('keydown', (event) => {
+  console.log(event)
+  if (event.key === 'r') {
+    playGame('Rock');
+  }
+  else if ( event.key === 'p') {
+    playGame('Paper');
+  }
+  else if (event.key ==='s') {
+    playGame('Scissor')
+  }
+});
 
 function playGame(playerMove){
   let result = '';
